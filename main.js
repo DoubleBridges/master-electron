@@ -10,7 +10,7 @@ let mainWindow
 function createWindow () {
 
   mainWindow = new BrowserWindow({
-    width: 1600, height: 800,
+    width: 1000, height: 800,
     webPreferences: { nodeIntegration: true }
   })
 
@@ -30,13 +30,7 @@ function createWindow () {
 
 
 // Electron `app` is ready
-app.on('ready', () => {
-  console.log(app.getPath('desktop'))
-  console.log(app.getPath('music'))
-  console.log(app.getPath('temp'))
-  console.log(app.getPath('userData'))
-  createWindow();
-})
+app.on('ready',   createWindow)
 
 // Quit when all windows are closed - (Not macOS - Darwin)
 app.on('window-all-closed', () => {
